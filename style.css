@@ -7,6 +7,62 @@
     color:black;
 
 }
-footer{
+footer nav{
     background-color: #976da8;
+}
+#quantity{
+    width:50px;
+}
+p{
+    margin-top:20px;
+}
+h1{
+    margin-top:20px;
+}
+.nav-tabs {
+    border:none;
+}
+.nav-tabs .nav-link{
+    border:none;
+    color:  #495057;
+}
+.nav-tabs .nav-link:hover{
+    border:none;
+    color:  #3fc9d3;
+}
+
+.nav-tabs .nav-link.active {
+    color: #976da8;
+    background-color: #fff;
+    border-bottom: 2px solid #976da8;
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#000000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#000000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+h3{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.similar-items-image{
+    height: 100%;
+    width: auto;
+    transition: all 0.6s ease-in;
+}
+
+.similar-items-image:hover{
+    transform: scale(1.2);
+}
+.shrinky-dink{
+    height: 20%;
+}
+
+footer{
+    margin-top: 40px;
 }

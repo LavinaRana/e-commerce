@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
         crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+        crossorigin="anonymous"></script>
+
 
 
 </head>
@@ -25,7 +28,7 @@
     </div>
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <img src="images/unicorn.png" width="30" height="30" alt="">Everthing Unicorns</a>
+            <img src="images/unicorn.png" width="30" height="30" alt="">Everything Unicorns</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -33,62 +36,205 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
                         More Information
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">More Information</a>
+                        <a class="dropdown-item" href="#">Sign Up</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>
+
                     </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Sign Up For Savings</a>
-                </li>
+
             </ul>
+            <button type="button" class="btn btn-primary" style="margin-right:10px" data-toggle="modal" data-target="#signUp">Sign Up</button>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
+            <i class="fas fa-shopping-cart" style="margin-left:10px"></i>
+            <span id="cartItems" class="badge"></span>
         </div>
+
     </nav>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis expedita commodi excepturi aliquam sapiente cumque illum?
-                Sit labore, magni fugiat in, nam aperiam dicta eum officia asperiores minima aspernatur repellat.
-
-
-            </div>
-            <div class="col-md-6">
-                <h1>hello</h1>
-                <p>description</p>
-                <hr>
-                <p>price</p>
-                <p>$99.99</p>
-                <p>select a quantity</p>
-
-
+    <!-- modal -->
+    <div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="signUpLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signUpLabel">Sign up for savings!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="signUpModal">
+                    <form id="signUpForm">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Enter your email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="john@example.net">
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="signUp">Submit</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="images/product1.png" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="images/product2.png" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="images/product3.png " alt="Third slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+
+            </div>
+            <div class="col-md-6">
+                <h1>Giant Unicorn Plush
+                    <span class="badge badge-secondary">New</span>
+                </h1>
+                <p>Soft, Sparkly, Magical</p>
+                <hr>
+                <p>Price</p>
+                <p>$99.99</p>
+                <div class="form-group">
+                    <label for="quantity">Select a Quantity</label>
+                    <select class="form-control" id="quantity">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <button id="addToCart" type="submit" class="btn btn-primary">Add to Cart</button>
+                <a href="http://www.cornify.com" onclick="cornify_add();return false;">
+                    <img src="http://www.cornify.com/assets/cornifycorn.gif" width="52" height="51" border="0" alt="Cornify" />
+                </a>
+
+
+            </div>
+            <!-- .col-md-6 -->
+        </div>
+        <!-- .row -->
+
+        <p>Product Information</p>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="description-tab" data-toggle="tab" href="#description" role="tab" aria-controls="description"
+                    aria-selected="true">Description</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#details" role="tab" aria-controls="details" aria-selected="false">Details</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="home-tab">
+                <p>This graceful unicorn will prance right into any child's collection -- and heart! With its pretty pink mane
+                    and tail, both scattered through with shimmering silver stands that catch the light, this enchanting
+                    friend is sure to become a new favorite. Additional irresistible details include super-silky plush fur,
+                    satin star decorations, beautiful blue eyes and a soft, shiny horn. </p>
+            </div>
+            <div class="tab-pane fade" id="details" role="tabpanel" aria-labelledby="profile-tab">
+                <ul style="margin-top:20px">
+                    <li>Suitable for ages 3 years and up</li>
+                    <li>Silky plush fur</li>
+                    <li>Measure 36" H</li>
+                    <li>Imported</li>
+                </ul>
+            </div>
+            <hr>
+        </div>
+        <h3>Similar Items</h3>
+        <div class="row">
+            <div class="col-sm-6 col-md-3">
+                <img class="similar-items-image" src="images/recommendedProduct1.png">
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <img class="similar-items-image" src="images/recommendedProduct2.png">
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <img class="similar-items-image" src="images/recommendedProduct3.png">
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <img class="similar-items-image" src="images/recommendedProduct4.png">
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <!-- .container -->
     <footer>
-        <nav class="navbar fixed-bottom navbar-light bg-light justify-content-center">
+        <nav class="navbar navbar-light justify-content-space-between">
             <a class="navbar-brand text-center" href="#">Everything Unicorns</a>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#needHelp">
+                Need Help?
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="needHelp" tabindex="-1" role="dialog" aria-labelledby="needHelpLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="needHelpLabel">Need Help?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Ask a question.</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="How much is shipping?">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </nav>
     </footer>
     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
         crossorigin="anonymous"></script>
+    <script type="text/javascript" src="cornify.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>
